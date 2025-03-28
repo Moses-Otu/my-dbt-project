@@ -495,3 +495,54 @@ WHERE "review_comments" IS NOT NULL
 AND "review_date" > (SELECT MAX("review_date") FROM {{ this }})
 {% endif %}
 ```
+Dim listings with host
+---
+``
+dim/dim_listings_w_hosts.sq
+``
+``` sql
+WITH 
+l AS ( 
+    SELECT 
+        * 
+    FROM 
+        {{ ref('dim_listings_cleansed') }} 
+), 
+h AS ( 
+    SELECT *  
+    FROM {{ ref('dim_hosts_cleansed') }} 
+) 
+ 
+SELECT
+    MD5(CONCAT(l."listing_id", GREATEST(l."updated_at", h."updated_at"))) AS listing_sk,
+    l."listing_id", 
+    l."listing_name", 
+    l."room_type", 
+    l."minimum_nights", 
+    l."price", 
+    l."host_id", 
+    MD5(CONCAT(l."host_id", GREATEST(l."updated_at", h."updated_at"))) AS host_sk,
+    h."host_name", 
+    h."is_superhost" as host_is_superhost, 
+    l."created_at", 
+    GREATEST(l."updated_at", h."updated_at") as updated_at 
+FROM l 
+LEFT JOIN h ON (h."host_id" = l."host_id")
+```
+## Dropping the views after ephemeral materialization
+---
+``
+Drop VIEW AIRBNB.DEV.SRC_airbnb_tx;
+``
+## Contents of models/sources.yml
+``` sql
+version: 2
+
+sources:
+  - name: airbnb
+    schema: raw
+    tables:
+      - name: airbnb_data
+        identifier: airbnb_tx_table
+
+```
