@@ -546,3 +546,46 @@ sources:
         identifier: airbnb_tx_table
 
 ```
+
+## Seeds
+---
+## Full Moon Dates CSV
+---
+Download the CSV from from thIS GITHUB location:
+
+``
+curl -o seeds/festive_holidays_past_10_years.csv https://raw.githubusercontent.com/Moses-Otu/my-dbt-project/main/festive_holidays_past_10_years.csv
+``
+
+Then place it to the ``seeds`` folder
+
+## Contents of models/mart/full_moon_reviews.sql
+
+``` sql
+{{ config(
+  materialized = 'table'
+) }}
+
+WITH fct_reviews AS (
+    SELECT * FROM {{ ref('fct_reviews') }}
+),
+holiday_dates AS (
+    SELECT DISTINCT Date AS holiday_date FROM {{ ref('festive_holidays_past_10_years') }}
+)
+
+SELECT 
+    r."listing_id",
+    CAST(r."review_date" AS DATE) AS review_date,
+    r."reviewer_name",
+    r."review_comments",
+    r."sentiment",
+    CASE 
+        WHEN d.holiday_date IS NOT NULL THEN 'Y'
+        ELSE 'N'
+    END AS is_holiday_review
+FROM fct_reviews r
+LEFT JOIN holiday_dates d 
+    ON CAST(r."review_date" AS DATE) = d.holiday_date
+
+```
+
