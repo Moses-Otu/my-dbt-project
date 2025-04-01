@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_listings_cleansed
+    columns:
+
+     - name: listing_id
+       tests:
+         - unique
+         - not_null
+         - relationships:
+             to: ref('dim_listings_w_owners')
+             field: listing_id
+
+models:
+  - name: dim_owners_cleansed
+    columns:
+      - name: host_id
+        tests:
+          - unique
+          - not_null
+
+

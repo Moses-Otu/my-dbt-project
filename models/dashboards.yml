@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://9471b49c.us2a.app.preset.io/superset/dashboard/8/?native_filters_key=3xMmAdJpXGZRWtI1rqIgtGxd-lOft_OsTAnY_Uv-_C8vnHLchKgbR2axULzre8WD
+    description: Executive Dashboard about Hostel listings and hosts
+      
+
+    depends_on:
+      - ref('dim_listings_w_owners')
+      - ref('holiday_reviews')
+
+    owner:
+      name: Moses Otu
+      email: Jada@gmail.com
