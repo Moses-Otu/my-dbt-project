@@ -17,3 +17,16 @@ Password: Moses@cap1
 <https://github.com/Moses-Otu/my-dbt-project/blob/main/documentation.md>
 
 
+
+
+
+
+![image](https://github.com/user-attachments/assets/769f3621-bb77-4f86-8796-9d9a3ec042ba)
+
+
+
+--------------------------------------------------------------------------------------
+
+![image](https://github.com/user-attachments/assets/c787b249-62e5-4208-b145-3c05386e10fb)
+
+
