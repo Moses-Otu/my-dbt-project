@@ -8,9 +8,9 @@
 
 <https://9471b49c.us2a.app.preset.io/superset/dashboard/p/57kpRMLZ3vP/>
 
-`` Email: mosessire@gmail.com ``
+Email: mosessire@gmail.com 
 
-`` Password: Moses@cap1 ``
+Password: Moses@cap1 
 
 `` Documentation ``
 
