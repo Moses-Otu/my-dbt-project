@@ -1,15 +1,5 @@
-Welcome to your new dbt project!
+### See important project links below
 
-### Using the starter project
+Presentation:
 
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+ `` <https://www.canva.com/design/DAGjVDmvTPk/BZhRZgV5ZeIGgD2AwraX_Q/view?utm_content=DAGjVDmvTPk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h22f8c2c28b> ``
