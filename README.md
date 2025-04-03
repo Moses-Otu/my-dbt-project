@@ -26,6 +26,12 @@ Email: mosessire@gmail.com
 
 Password: Moses@cap1 
 
+
+`` Statistical Analysis and ML ``
+
+<https://colab.research.google.com/drive/1Wk5HQZDUZDulXkHGbHwHswVC4t9dXjgD?usp=sharing>
+
+
 `` Documentation ``
 
 <https://github.com/Moses-Otu/my-dbt-project/blob/main/documentation.md>
